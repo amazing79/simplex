@@ -7,7 +7,7 @@ Proyecto base en **PHP** con estructura mínima de carpetas (`src`, `config`, `p
 Podés crear un nuevo proyecto a partir de este template con:
 
 ```bash
-composer create-project ignacio/simplex
+composer create-project amazing79/simplex
 ```
 
 ## Idea
