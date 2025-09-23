@@ -5,7 +5,7 @@ define ('APP_ROOT', dirname(__DIR__));
 require_once   APP_ROOT . '/vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
-use Ignacio\Simplex\Simplex\Framework;
+use Amazing79\Simplex\Simplex\Framework;
 use DI\ContainerBuilder;
 
 

@@ -2,8 +2,8 @@
 
 namespace Simplex\Tests;
 
-use Ignacio\Simplex\Index\Controller\IndexController;
-use Ignacio\Simplex\Simplex\Framework;
+use Amazing79\Simplex\Index\Controller\IndexController;
+use Amazing79\Simplex\Simplex\Framework;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;

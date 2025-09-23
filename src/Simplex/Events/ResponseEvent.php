@@ -1,6 +1,6 @@
 <?php
 
-namespace Ignacio\Simplex\Simplex\Events;
+namespace Amazing79\Simplex\Simplex\Events;
 
 use Symfony\Contracts\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\Request;

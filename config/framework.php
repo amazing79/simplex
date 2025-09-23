@@ -1,6 +1,6 @@
 <?php
 
-use Ignacio\Simplex\Simplex\Listeners\ContentLengthListener;
+use Amazing79\Simplex\Simplex\Listeners\ContentLengthListener;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
@@ -27,8 +27,8 @@ return [
     ControllerResolver::class => function (Container $container) {
         return new ControllerResolver();
     },
-    Ignacio\Simplex\Simplex\Framework::class => function (Container $container) {
-        return new Ignacio\Simplex\Simplex\Framework(
+    Amazing79\Simplex\Simplex\Framework::class => function (Container $container) {
+        return new Amazing79\Simplex\Simplex\Framework(
             $container->get(EventDispatcher::class),
             $container->get('Routing.Definitions'),
             $container->get(ControllerResolver::class),

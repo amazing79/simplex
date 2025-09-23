@@ -1,11 +1,11 @@
 {
-    "name": "ignacio/simplex",
+    "name": "amazing79/simplex",
     "description": "Implementacion del framework mediante el tutorial de symfony mas un bonus",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Ignacio\\Simplex\\": "src/"
+            "Amazing79\\Simplex\\": "src/"
         }
     },
     "authors": [

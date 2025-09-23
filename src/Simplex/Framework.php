@@ -1,8 +1,8 @@
 <?php
 
-namespace Ignacio\Simplex\Simplex;
+namespace Amazing79\Simplex\Simplex;
 
-use Ignacio\Simplex\Simplex\Events\ResponseEvent;
+use Amazing79\Simplex\Simplex\Events\ResponseEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;

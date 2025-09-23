@@ -1,6 +1,6 @@
 <?php
 
-namespace Ignacio\Simplex\Index\Controller;
+namespace Amazing79\Simplex\Index\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

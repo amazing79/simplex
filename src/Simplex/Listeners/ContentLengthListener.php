@@ -1,8 +1,8 @@
 <?php
 
-namespace Ignacio\Simplex\Simplex\Listeners;
+namespace Amazing79\Simplex\Simplex\Listeners;
 
-use Ignacio\Simplex\Simplex\Events\ResponseEvent;
+use Amazing79\Simplex\Simplex\Events\ResponseEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ContentLengthListener implements EventSubscriberInterface
