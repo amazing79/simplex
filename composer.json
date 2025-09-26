@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Amazing79\\Simplex\\": "src/"
+            "Amazing79\\Simplex\\": "src/",
+            "App\\": "app/"
         }
     },
     "authors": [
@@ -29,6 +30,9 @@
     },
 
     "scripts": {
+      "post-root-package-install": [
+        "@php -r \"file_exists('.env') || copy('.env_example', '.env');\""
+      ],
       "post-install-cmd": [
           "@php -r \"echo '✅ Proyecto instalado correctamente.'.PHP_EOL;\""
       ],

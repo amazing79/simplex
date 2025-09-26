@@ -16,8 +16,10 @@ $request = Request::createFromGlobals();
 $routes = include APP_ROOT .'/config/routes.php';
 
 $builder = new ContainerBuilder();
-$container = $builder->addDefinitions(APP_ROOT.'/config/framework.php')
-                ->build();
+$container = $builder
+            ->addDefinitions(APP_ROOT . '/config/events.php')
+            ->addDefinitions(APP_ROOT.'/config/framework.php')
+            ->build();
 $container->set('request.globals', $request);
 $container->set('routes', $routes);
 

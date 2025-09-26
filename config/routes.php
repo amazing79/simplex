@@ -19,6 +19,6 @@ $routes = new Routing\RouteCollection();
  * ]));
 */
 $routes->add('index', new Routing\Route('/', [
-    '_controller' => 'Amazing79\Simplex\Index\Controller\IndexController::index',
+    '_controller' => 'App\Controllers\Index\IndexController::index',
 ]));
 return $routes;

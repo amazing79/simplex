@@ -2,6 +2,7 @@
 
 namespace Amazing79\Simplex\Simplex;
 
+use Amazing79\Simplex\Simplex\Events\KernelEvents;
 use Amazing79\Simplex\Simplex\Events\ResponseEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,12 +34,13 @@ class Framework
 
             $response = call_user_func_array($controller, $arguments);
         } catch (ResourceNotFoundException $exception) {
-            return new Response('Not Found', 404);
+            $response = new Response($exception->getMessage(), Response::HTTP_NOT_FOUND);
+            $this->dispatcher->dispatch(new ResponseEvent($response, $request), KernelEvents::NotFound->value );
         } catch (\Exception $exception) {
-            return new Response('An error occurred', 500);
+            return new Response($exception->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
         }
         // dispatch a response event
-        $this->dispatcher->dispatch(new ResponseEvent($response, $request), 'response');
+        $this->dispatcher->dispatch(new ResponseEvent($response, $request), KernelEvents::Response->value );
 
         return $response;
     }

@@ -2,17 +2,19 @@
 
 namespace Simplex\Tests;
 
-use Amazing79\Simplex\Index\Controller\IndexController;
 use Amazing79\Simplex\Simplex\Framework;
+use Amazing79\Simplex\Simplex\Render;
+use Amazing79\Simplex\Simplex\Renders\HtmlRender;
+use App\Controllers\Index\IndexController;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
-use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
+use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
+use Symfony\Component\HttpKernel\Controller\ControllerResolver;
+use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\Routing;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
-use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 
 class FrameworkTest extends TestCase
 {
@@ -81,6 +83,7 @@ class FrameworkTest extends TestCase
         $response = $framework->handle(new Request());
 
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertStringContainsString('Hello world! Bienvenido a Simplex!', $response->getContent());
+        $render = new Render(new HtmlRender());
+        $this->assertEquals($render->render('index/index')->getContent(), $response->getContent());
     }
 }
