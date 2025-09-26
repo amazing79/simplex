@@ -35,7 +35,8 @@ $urlTuto = $url ?? 'https://symfony.com/doc/current/create_framework/index.html'
             <li>Otras configuraciones necesarias</li>
         </ul>
         <p>
-            Esto despues lo agregas en los injectores de dependencias y ¡¡guala!!. Record&aacute; hacerlo desde tu punto de acceso a la app
+            Esto despues lo agregas en los injectores de dependencias (dentro de config, hay algunos ejemplos) y ¡¡guala!!.
+            Record&aacute; agregar estas configuraciones desde tu punto de acceso a la app, es decir
             <strong>public/index.php</strong>.
         </p>
     </section>
@@ -56,12 +57,12 @@ $urlTuto = $url ?? 'https://symfony.com/doc/current/create_framework/index.html'
             </p>
             <p>
                 Las plantillas son html + php puro y por el momento no maneja layouts. Igualmente, a futuro veremos si agregamos alg&uacute;n
-                de plantillas (twig o smarty) o lo dejamos asi.
+                motor de plantillas (twig o smarty) o lo dejamos asi.
             </p>
             <p>
                 El manejo de datos esta pensado en el uso de la librer&iacute;a de php PDO, por lo cual los modelos pueden usar sql para acceder
                 a los datos de la base. Como la idea fue crear un framework para actualizar apps sencillas, esto era lo m&aacute;s conveniente.
-                Se podr&iacute;a agregar una librería ORM (como Doctrine) pero si es muy complicado, usar frameworks más potentes.
+                Se podr&iacute;a agregar una librería ORM (como Doctrine) pero si el sistema es muy complicado, usar frameworks más potentes.
             </p>
         </section>
     </section>
