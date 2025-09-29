@@ -12,6 +12,6 @@ class IndexController
     public function index(Request $request): Response
     {
         $view = new Render(new HtmlRender());
-        return $view->render('index/index');
+        return $view->render('index/welcome');
     }
 }

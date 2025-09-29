@@ -7,7 +7,7 @@ Proyecto base en **PHP** con estructura mínima de carpetas (`app`, `src`, `conf
 Podés crear un nuevo proyecto a partir de este template con:
 
 ```bash
-composer create-project amazing79/simplex
+composer create-project amazing79/simplex [nombre_proyecto]
 ```
 
 ## Idea
@@ -46,12 +46,13 @@ composer tests
 Se incluyo un ejemplo de una página index con su controlador, a modo de entender un poco el funcionamiento. En corto:
 
 * Configurar las dependencias según necesitemos (modelos, nuevos eventos, etc.).
+* Reemplazar template de IndexController (welcome) y usar uno propio (también podemos editarlo, como prefieras).
 * La metodologia es el patron MVC. Seguir este enfoque, y guardar los scripts en sus respectivas carpetas según su proposito.
 * No soporta manejo de sesiones de forma nativa. Esto requiere que lo implementemos nosotros. 
 * Los tests actualmente están funcionando, pero solo verifican el funcionamiento del framework desde el punto base. Modificaciones 
 al framework por parte de uno podria incluir modificar los tests.
 * No incluye layouts, ya que las páginas que debemos actualizar tienen estructura muy simple (pero se puede incorporar a futuro).
-* Se modificó parte del codigo del tutorial para trabajar don Inyectores de dependecias y asi ser más flexible la configuracion del framework
+* Se modificó parte del codigo del tutorial para trabajar con Inyectores de dependencias y asi ser más flexible la configuracion del framework.
 
 Para marcar el punto desde donde empezamos a usarlo como framework, largamos la release de la version v2.0.0. Con esta version procedimos 
 a actualizar un par de apps. 
