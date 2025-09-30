@@ -2,6 +2,7 @@
 
 namespace Amazing79\Simplex\Simplex\Renders;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class HtmlRender implements RenderStrategy
@@ -10,7 +11,8 @@ class HtmlRender implements RenderStrategy
 
     public function __construct()
     {
-        $this->assets_path = isset($_ENV['APP_PATH']) ? $_ENV['APP_PATH'] .'/assets': '/assets';
+        $relative_path = $this->makeRelativePath() ?? $_ENV['APP_PATH'];
+        $this->assets_path = $relative_path . '/assets';
     }
     public function render(string $template = '', array $parameters = []): Response
     {
@@ -25,5 +27,11 @@ class HtmlRender implements RenderStrategy
     private function includeAsset(string $asset): string
     {
         return $this->assets_path . $asset;
+    }
+
+    private function makeRelativePath(): string
+    {
+        $context = Request::createFromGlobals();
+        return $context->getBasePath();
     }
 }
