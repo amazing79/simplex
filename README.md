@@ -51,8 +51,11 @@ Se incluyo un ejemplo de una página index con su controlador, a modo de entende
 * No soporta manejo de sesiones de forma nativa. Esto requiere que lo implementemos nosotros. 
 * Los tests actualmente están funcionando, pero solo verifican el funcionamiento del framework desde el punto base. Modificaciones 
 al framework por parte de uno podria incluir modificar los tests.
-* No incluye layouts, ya que las páginas que debemos actualizar tienen estructura muy simple (pero se puede incorporar a futuro).
 * Se modificó parte del codigo del tutorial para trabajar con Inyectores de dependencias y asi ser más flexible la configuracion del framework.
+* Se provee un layout de ejemplo para ver como simplificar el codigo de nuestras vistas. Por lo tanto, para renderizar html contaremos con 
+ dos estrategias (HtmlRender y HtmlLayoutRender). En el primero podremos incluir en la plantilla todo el html del documento. En el segundo, las vistas 
+ solo necesitan contener html de la página a renderizar, esta luego se incorpora al layout mediante su propiedad {{content}}. Para acceder al mismo, podemos ingresar en la siguiente
+ruta: [ruta_principal/layout]. Ejemplo: http://localhost/layout. Para personalizar el layout, ir a la carpeta View/layout/ 
 
 Para marcar el punto desde donde empezamos a usarlo como framework, largamos la release de la version v2.0.0. Con esta version procedimos 
 a actualizar un par de apps. 

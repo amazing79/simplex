@@ -35,7 +35,7 @@ $urlTuto = $url ?? 'https://symfony.com/doc/current/create_framework/index.html'
             <li>Otras configuraciones necesarias</li>
         </ul>
         <p>
-            Esto despues lo agregas en los injectores de dependencias (dentro de config, hay algunos ejemplos) y ¡¡guala!!.
+            Esto despu&acute;s lo agregas en los injectores de dependencias (dentro de config, hay algunos ejemplos) y ¡¡guala!!.
             Record&aacute; agregar estas configuraciones desde tu punto de acceso a la app, es decir
             <strong>public/index.php</strong>.
         </p>
@@ -53,16 +53,30 @@ $urlTuto = $url ?? 'https://symfony.com/doc/current/create_framework/index.html'
                 El funcionamiento es similar a otros frameworks. Aunque en el tutorial se segu&iacute;a un enfoque orientado
                 a <strong>Response/Request</strong>, se lo llevo a un enfoque MVC.
                 Para entender un poco como funciona, se agreg&oacute; un controller (IndexController) como tambi&eacute;n algunas
-                plantillas de ejemplo (index y error). Estas editar a gusto.
+                plantillas de ejemplo (welcome, layout y error). Estas editar a gusto.
             </p>
             <p>
-                Las plantillas son html + php puro y por el momento no maneja layouts. Igualmente, a futuro veremos si agregamos alg&uacute;n
-                motor de plantillas (twig o smarty) o lo dejamos asi.
+                Las plantillas son html + php puro. Para facilitar la mantenibilidad de la estructura del sitio, se provee un layout de ejemplo para ver como simplificar
+                el c&oacute;digo de nuestras vistas. Por lo tanto, para renderizar html contaremos con dos estrategias (HtmlRender y HtmlLayoutRender).
+            </p>
+            <ul>
+                <li>
+                    En el primero podremos incluir en la plantilla todo el html del documento.
+                </li>
+                <li>
+                    En el segundo, las vistas solo necesitan contener html de la página a renderizar, esta luego se incorpora al layout mediante su propiedad {{content}}.
+                    Para acceder al mismo, podemos ingresar en la siguiente ruta: <a href="./layout">layout de ejemplo</a><br>
+                    Para personalizar el layout, ir a la carpeta <strong><i>View/layout</i></strong>
+                </li>
+            </ul>
+            <p>
+                Con la incorporaci&oacute;n de layouts, podremos incluir el js y css com&uacute;n del sitio en el layout, y el js particular (y css, si fuera necesario)
+                en su respectivo template. Para tal fin, se provee el m&eacute;todo:  <code><i>loadScript(name, attributes = '')</i></code>
             </p>
             <p>
-                El manejo de datos esta pensado en el uso de la librer&iacute;a de php PDO, por lo cual los modelos pueden usar sql para acceder
+                El manejo de datos est&aacute; pensado en el uso de la librer&iacute;a de php PDO, por lo cual los modelos pueden usar sql para acceder
                 a los datos de la base. Como la idea fue crear un framework para actualizar apps sencillas, esto era lo m&aacute;s conveniente.
-                Se podr&iacute;a agregar una librería ORM (como Doctrine) pero si el sistema es muy complicado, usar frameworks más potentes.
+                Se podr&iacute;a agregar una librería ORM (como Doctrine) pero s&iacute; el sistema es muy complicado, usar frameworks más potentes.
             </p>
         </section>
     </section>

@@ -84,6 +84,6 @@ class FrameworkTest extends TestCase
 
         $this->assertEquals(200, $response->getStatusCode());
         $render = new Render(new HtmlRender());
-        $this->assertEquals($render->render('index/index')->getContent(), $response->getContent());
+        $this->assertEquals($render->render('index/welcome')->getContent(), $response->getContent());
     }
 }

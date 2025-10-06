@@ -21,4 +21,8 @@ $routes = new Routing\RouteCollection();
 $routes->add('index', new Routing\Route('/', [
     '_controller' => 'App\Controllers\Index\IndexController::index',
 ]));
+
+$routes->add('index.layout', new Routing\Route('/layout', [
+    '_controller' => 'App\Controllers\Index\IndexController::layout',
+]));
 return $routes;

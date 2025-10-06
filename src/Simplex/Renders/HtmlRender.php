@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 class HtmlRender implements RenderStrategy
 {
     private string $assets_path;
+    private array $scripts = [];
 
     public function __construct()
     {
@@ -24,7 +25,7 @@ class HtmlRender implements RenderStrategy
         return $response;
     }
 
-    private function includeAsset(string $asset): string
+    protected function includeAsset(string $asset): string
     {
         return $this->assets_path . $asset;
     }
@@ -33,5 +34,17 @@ class HtmlRender implements RenderStrategy
     {
         $context = Request::createFromGlobals();
         return $context->getBasePath();
+    }
+
+    public function loadScript(string $path, string $attributes = ''):void
+    {
+        $this->scripts[] = ['path' => $path, 'attributes' => $attributes];
+    }
+
+    protected function printScripts(): void
+    {
+        foreach ($this->scripts as $script) {
+            echo sprintf("<script src=\"%s\" %s></script>\n", $script['path'], $script['attributes']);
+        }
     }
 }
