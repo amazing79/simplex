@@ -47,4 +47,8 @@ class HtmlRender implements RenderStrategy
             echo sprintf("<script src=\"%s\" %s></script>\n", $script['path'], $script['attributes']);
         }
     }
+    protected function makeUrl(string $path): string
+    {
+        return $this->makeRelativePath() . $path;
+    }
 }

@@ -65,7 +65,7 @@ $urlTuto = $url ?? 'https://symfony.com/doc/current/create_framework/index.html'
                 </li>
                 <li>
                     En el segundo, las vistas solo necesitan contener html de la página a renderizar, esta luego se incorpora al layout mediante su propiedad {{content}}.
-                    Para acceder al mismo, podemos ingresar en la siguiente ruta: <a href="./layout">layout de ejemplo</a><br>
+                    Para acceder al mismo, podemos ingresar en la siguiente ruta: <a href="<?= $this->makeUrl('/layout')?>">layout de ejemplo</a><br>
                     Para personalizar el layout, ir a la carpeta <strong><i>View/layout</i></strong>
                 </li>
             </ul>
