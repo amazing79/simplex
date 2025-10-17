@@ -1,6 +1,6 @@
 # Simplex Framework
 
-![Build](https://github.com/amazing79/psr15-middlewarestack/actions/workflows/phptests.yml/badge.svg)
+![Build](https://github.com/amazing79/simplex/actions/workflows/phptests.yml/badge.svg)
 ![Total Downloads](https://img.shields.io/packagist/dt/amazing79/simplex)
 [![Latest Stable Version](https://img.shields.io/packagist/v/amazing79/simplex)](https://packagist.org/packages/amazing79/simplex)
 ![License](https://img.shields.io/packagist/l/amazing79/simplex)
