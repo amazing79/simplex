@@ -5,7 +5,7 @@ namespace Simplex\Tests;
 use Amazing79\Simplex\Simplex\Framework;
 use Amazing79\Simplex\Simplex\Render;
 use Amazing79\Simplex\Simplex\Renders\HtmlRender;
-use App\Controllers\Index\IndexController;
+use App\Controllers\Welcome\WelcomeController;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -66,7 +66,7 @@ class FrameworkTest extends TestCase
             ->method('match')
             ->willReturn([
                 '_route' => '/',
-                '_controller' => [new IndexController(), 'index'],
+                '_controller' => [new WelcomeController(), 'welcome'],
             ])
         ;
         $matcher

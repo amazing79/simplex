@@ -73,10 +73,15 @@ Para desarrollar apps más complejas, usar otros frameworks.
 
 ### Agregados importantes
 
-* Se agregó soporte de sesiones. Se crearon clases implementando interfaces nativas para tal fin.
+* Se agregó soporte de sesiones. Se crearon clases implementando interfaces nativas para tal fin. 
+* Las sesiones se pueden almacenar en el directorio temporal (por default), o configurarla guardar las mismas dentro de 
+ storage/sessions (usar valor en archivo .env). Además dentro de storage/app podremos almacenar otra info que veamos necesaria. 
+ Usar a conveniencia. 
 * Se agregó controlador base de sesiones para ser extendido por aquellos controladores que lo necesiten.
 * Se agregaron nuevos eventos para escuchar por listener. Estos son Request, exception, y not_authorized.
 * Con los eventos y las sesiones, se pueden crear listener para proteger accesos no autorizados, entre otras cosas.
+* Se reestructuro organización de controladores, para tener más sentido. Ahora se proveen 2 controladores extensibles.
+* Se agrego nuevo controller para facilitar la modificación del controlador principal sin que esto afecte a los tests.
 
 
 [Clase Handler para el manejo de sesiones en archivos](./src/Simplex/Sessions/README.md)
@@ -85,7 +90,7 @@ Para desarrollar apps más complejas, usar otros frameworks.
 
 [Trait para reutilizar la clase SessioManager en otras clases o controladores.](./src/Simplex/Traits/README.md)
 
-[Clase AbstractSessionController extendible, el cual utiliza el trait anterior. Esto evita tener que incorporar el trait en todos los controladores.](./src/Simplex/Controllers/README.md)
+[Clase AbstractSessionController extendible, el cual utiliza el trait anterior. Esto evita tener que incorporar el trait en todos los controladores.](./app/Controllers/README.md)
 
 
 ## 🧠 Autor

@@ -7,7 +7,7 @@ Clase base para controladores que incorpora el trait HasSession, preparada para 
 <?php
 namespace App\Controllers;
 
-use Amazing79\Simplex\Simplex\Controllers\AbstractSessionController;
+use App\Controllers\AbstractSessionController;
 
 class UserController extends AbstractSessionController
 {

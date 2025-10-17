@@ -1,29 +1,12 @@
 <?php
 
-namespace Amazing79\Simplex\Simplex\Controllers;
+namespace App\Controllers;
 
-use Amazing79\Simplex\Simplex\Traits\HasSession;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * AbstractSessionController
- *
- * Clase base para todos los controladores del proyecto que requieran manejo de sesiones.
- * Provee acceso directo al sistema de sesiones mediante el trait HasSession.
- *
- * Está pensada para ser extendida por controladores concretos, por ejemplo:
- *
- *   class UserController extends AbstractSessionController {
- *       public function perfil() {
- *           $usuario = $this->session()->get('user');
- *       }
- *   }
- */
-abstract class AbstractSessionController
+abstract class BaseController
 {
-
-    use HasSession;
     protected string $basepath;
 
     /**
@@ -32,8 +15,6 @@ abstract class AbstractSessionController
      */
     public function __construct()
     {
-        // En caso de que quieras registrar hooks, middlewares o inicializar la sesión aquí
-        // Podés acceder a la sesión directamente: $this->session();
         $context = Request::createFromGlobals();
         $this->basepath = $context->getBasePath();
     }
@@ -53,5 +34,4 @@ abstract class AbstractSessionController
 
         return $this->basepath . $path;
     }
-
 }
