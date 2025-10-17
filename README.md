@@ -54,7 +54,6 @@ Se incluyo un ejemplo de una página index con su controlador, a modo de entende
 * Configurar las dependencias según necesitemos (modelos, nuevos eventos, etc.).
 * Reemplazar template de IndexController (welcome) y usar uno propio (también podemos editarlo, como prefieras).
 * La metodologia es el patron MVC. Seguir este enfoque, y guardar los scripts en sus respectivas carpetas según su proposito.
-* No soporta manejo de sesiones de forma nativa. Esto requiere que lo implementemos nosotros. 
 * Los tests actualmente están funcionando, pero solo verifican el funcionamiento del framework desde el punto base. Modificaciones 
 al framework por parte de uno podria incluir modificar los tests.
 * Se modificó parte del codigo del tutorial para trabajar con Inyectores de dependencias y asi ser más flexible la configuracion del framework.
@@ -66,10 +65,17 @@ ruta: [ruta_principal/layout]. Ejemplo: http://localhost/layout. Para personaliz
 en aquellos controladores que necesiten acceder a la session (este controller base emplea un trait)
 
 Para marcar un punto personal desde donde empezamos a usarlo como framework, largamos la release de la version v2.0.0. Con esta version procedimos 
-a actualizar un par de apps. Nuevamente, este framework tiene objetivo facilitarnos la actualización de sistemas viejos hechos con php plano. Para 
-desarrollar apps más complejas, usar otros frameworks.
+a actualizar un par de apps. Nuevamente, este framework tiene objetivo facilitarnos la actualización de sistemas viejos hechos con php plano. 
+
+Para desarrollar apps más complejas, usar otros frameworks.
 
 ### Agregados importantes
+
+* Se agregó soporte de sesiones. Se crearon clases implementando interfaces nativas para tal fin.
+* Se agregó controlador base de sesiones para ser extendido por aquellos controladores que lo necesiten.
+* Se agregaron nuevos eventos para escuchar por listener. Estos son Request, exception, y not_authorized.
+* Con los eventos y las sesiones, se pueden crear listener para proteger accesos no autorizados, entre otras cosas.
+
 
 [Clase Handler para el manejo de sesiones en archivos](./src/Simplex/Sessions/README.md)
 
@@ -78,3 +84,7 @@ desarrollar apps más complejas, usar otros frameworks.
 [Trait para reutilizar la clase SessioManager en otras clases o controladores.](./src/Simplex/Traits/README.md)
 
 [Clase AbstractSessionController extendible, el cual utiliza el trait anterior. Esto evita tener que incorporar el trait en todos los controladores.](./src/Simplex/Controllers/README.md)
+
+
+## 🧠 Autor
+Ignacio Jauregui — [GitHub](https://github.com/amazing79)
