@@ -1,5 +1,11 @@
 # Simplex Framework
 
+![Build](https://github.com/amazing79/psr15-middlewarestack/actions/workflows/phptests.yml/badge.svg)
+![Total Downloads](https://img.shields.io/packagist/dt/amazing79/simplex)
+[![Latest Stable Version](https://img.shields.io/packagist/v/amazing79/simplex)](https://packagist.org/packages/amazing79/simplex)
+![License](https://img.shields.io/packagist/l/amazing79/simplex)
+
+
 Proyecto base en **PHP** con estructura mínima de carpetas (`app`, `src`, `config`, `public`, `test` ), pensado para iniciarlo rápido con [Composer](https://getcomposer.org/).
 
 ## 🚀 Instalación
@@ -7,7 +13,7 @@ Proyecto base en **PHP** con estructura mínima de carpetas (`app`, `src`, `conf
 Podés crear un nuevo proyecto a partir de este template con:
 
 ```bash
-composer create-project amazing79/simplex [nombre_proyecto]
+  composer create-project amazing79/simplex [nombre_proyecto]
 ```
 
 ## Idea
@@ -34,11 +40,11 @@ Dentro de los scripts podemos:
 
 Probar la app de bienvenida
 ```bash
-composer start
+  composer start
 ```
 Correr los tests del framework
 ```bash
-composer tests
+  composer tests
 ```
 
 ## Modo de trabajo
@@ -56,6 +62,19 @@ al framework por parte de uno podria incluir modificar los tests.
  dos estrategias (HtmlRender y HtmlLayoutRender). En el primero podremos incluir en la plantilla todo el html del documento. En el segundo, las vistas 
  solo necesitan contener html de la página a renderizar, esta luego se incorpora al layout mediante su propiedad {{content}}. Para acceder al mismo, podemos ingresar en la siguiente
 ruta: [ruta_principal/layout]. Ejemplo: http://localhost/layout. Para personalizar el layout, ir a la carpeta View/layout/ 
+* Se agregó api para manejo de sesiones. Para mayor compatibilidad, se creó usando las interfaces nativas de php. Además, se agregó un controller base para extender 
+en aquellos controladores que necesiten acceder a la session (este controller base emplea un trait)
 
-Para marcar el punto desde donde empezamos a usarlo como framework, largamos la release de la version v2.0.0. Con esta version procedimos 
-a actualizar un par de apps. 
+Para marcar un punto personal desde donde empezamos a usarlo como framework, largamos la release de la version v2.0.0. Con esta version procedimos 
+a actualizar un par de apps. Nuevamente, este framework tiene objetivo facilitarnos la actualización de sistemas viejos hechos con php plano. Para 
+desarrollar apps más complejas, usar otros frameworks.
+
+### Agregados importantes
+
+[Clase Handler para el manejo de sesiones en archivos](./src/Simplex/Sessions/README.md)
+
+[Clase SessionManager para acceder facilmente a la sesion en formato orientado a objetos.](./src/Simplex/Sessions/README.md#sessionmanager-y-staticsessionmanager)
+
+[Trait para reutilizar la clase SessioManager en otras clases o controladores.](./src/Simplex/Traits/README.md)
+
+[Clase AbstractSessionController extendible, el cual utiliza el trait anterior. Esto evita tener que incorporar el trait en todos los controladores.](./src/Simplex/Controllers/README.md)

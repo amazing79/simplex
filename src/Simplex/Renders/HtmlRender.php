@@ -22,6 +22,15 @@ class HtmlRender implements RenderStrategy
         include sprintf(APP_ROOT .'/app/Views/%s.php', $template);
         $response = new Response(ob_get_clean());
         $response->headers->set('Content-Type', 'text/html');
+        $response->setCache([
+            'must_revalidate'  => true,
+            'no_cache'         => true,
+            'no_store'         => true,
+            'max_age'          => 600,
+            's_maxage'         => 600,
+            'last_modified'    => new \DateTime(),
+            ]);
+
         return $response;
     }
 
@@ -30,7 +39,7 @@ class HtmlRender implements RenderStrategy
         return $this->assets_path . $asset;
     }
 
-    private function makeRelativePath(): string
+    protected function makeRelativePath(): string
     {
         $context = Request::createFromGlobals();
         return $context->getBasePath();
@@ -47,6 +56,7 @@ class HtmlRender implements RenderStrategy
             echo sprintf("<script src=\"%s\" %s></script>\n", $script['path'], $script['attributes']);
         }
     }
+
     protected function makeUrl(string $path): string
     {
         return $this->makeRelativePath() . $path;
