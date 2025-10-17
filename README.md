@@ -29,8 +29,8 @@ Segun el tutorial, tenemos dos puntos importantes:
 
 Se optó por continuar el desarrollo desde el primer punto pero agregando algunas funcionalidades más:
 
-* Agregar libreria para soporte de archivos .env
-* Agregar soporte de Inyectores de dependencias [PHP-DI](https://php-di.org/) 
+* Se agregó libreria para soporte de archivos .env [phpdotenv](https://github.com/vlucas/phpdotenv)
+* Se agregó soporte de Inyectores de dependencias [PHP-DI](https://php-di.org/) 
 * Cambiar el punto de acceso de la App de /web/front.php  a /public/index.php.
 * Como chiche, se incluyo un archivo ".htaccess_example" para reescribir las rutas de la app y cambiar el index.php/url por /url. Esto es opcional.
 * El framework consta con test propios para validar que funcione ante eventuales cambios.
@@ -58,9 +58,11 @@ Se incluyo un ejemplo de una página index con su controlador, a modo de entende
 al framework por parte de uno podria incluir modificar los tests.
 * Se modificó parte del codigo del tutorial para trabajar con Inyectores de dependencias y asi ser más flexible la configuracion del framework.
 * Se provee un layout de ejemplo para ver como simplificar el codigo de nuestras vistas. Por lo tanto, para renderizar html contaremos con 
- dos estrategias (HtmlRender y HtmlLayoutRender). En el primero podremos incluir en la plantilla todo el html del documento. En el segundo, las vistas 
- solo necesitan contener html de la página a renderizar, esta luego se incorpora al layout mediante su propiedad {{content}}. Para acceder al mismo, podemos ingresar en la siguiente
-ruta: [ruta_principal/layout]. Ejemplo: http://localhost/layout. Para personalizar el layout, ir a la carpeta View/layout/ 
+ dos estrategias (HtmlRender y HtmlLayoutRender). 
+  * En el primero podremos incluir en la plantilla todo el html del documento. 
+  * En el segundo, las vistas 
+   solo necesitan contener html de la página a renderizar, esta luego se incorpora al layout mediante su propiedad {{content}}. Para acceder al mismo, podemos ingresar en la siguiente
+  ruta: [ruta_principal/layout]. Ejemplo: http://localhost/layout. Para personalizar el layout, ir a la carpeta Views/layout/ 
 * Se agregó api para manejo de sesiones. Para mayor compatibilidad, se creó usando las interfaces nativas de php. Además, se agregó un controller base para extender 
 en aquellos controladores que necesiten acceder a la session (este controller base emplea un trait)
 
