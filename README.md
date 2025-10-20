@@ -36,7 +36,28 @@ Se optó por continuar el desarrollo desde el primer punto pero agregando alguna
 * El framework consta con test propios para validar que funcione ante eventuales cambios.
 * Además, agregamos algunos scripts dentro de la configuracion de composer.
 
-Dentro de los scripts podemos: 
+## Para empezar a programar
+
+Si querés empezar a programar, acordate de configurar lo siguiente (siempre y cuando lo necesites):
+
+* Modelos
+* Base de datos
+* Otras configuraciones necesarias
+
+Esto después lo agregas en los injectores de dependencias (dentro de config, hay algunos ejemplos) y ¡¡guala!!. Recordá 
+agregar estas configuraciones desde tu punto de acceso a la app, es decir public/index.php.
+
+## Personalización
+
+Recordá que este framework es personalizable, por lo cual si querés agregarle cosas al framework, hazlo a tu gusto. 
+Podrás encontrar el código dentro del directorio src/. Todo lo demás, colocalo dentro de app/.
+
+El funcionamiento es similar a otros frameworks. Aunque en el tutorial se seguía un enfoque orientado a Response/Request, se lo llevo a un enfoque MVC. 
+Para entender un poco como funciona, se agregó un controller (IndexController) como también algunas plantillas de ejemplo (welcome, layout y error). Estas editar a gusto.
+
+**Nota** Para entender mejor el funcionamiento de los objetos Response y Request, [ver la documentación de Symfony](https://symfony.com/doc/8.0/components/http_foundation.html)
+
+Además, dentro de los scripts podemos: 
 
 Probar la app de bienvenida
 ```bash
@@ -75,20 +96,20 @@ Para desarrollar apps más complejas, usar otros frameworks.
 
 * Se agregó soporte de sesiones. Se crearon clases implementando interfaces nativas para tal fin. 
 * Las sesiones se pueden almacenar en el directorio temporal (por default), o configurarla guardar las mismas dentro de 
- storage/sessions (usar valor en archivo .env). Además dentro de storage/app podremos almacenar otra info que veamos necesaria. 
+ storage/sessions (usar valor en archivo .env). Además, dentro de storage/app podremos almacenar otra info que veamos necesaria. 
  Usar a conveniencia. 
 * Se agregó controlador base de sesiones para ser extendido por aquellos controladores que lo necesiten.
 * Se agregaron nuevos eventos para escuchar por listener. Estos son Request, exception, y not_authorized.
 * Con los eventos y las sesiones, se pueden crear listener para proteger accesos no autorizados, entre otras cosas.
-* Se reestructuro organización de controladores, para tener más sentido. Ahora se proveen 2 controladores extensibles.
-* Se agrego nuevo controller para facilitar la modificación del controlador principal sin que esto afecte a los tests.
+* Se reestructuró organización de controladores, para tener más sentido. Ahora se proveen 2 controladores extensibles.
+* Se agregó nuevo controller para facilitar la modificación del controlador principal sin que esto afecte a los tests.
 
 
 [Clase Handler para el manejo de sesiones en archivos](./src/Simplex/Sessions/README.md)
 
 [Clase SessionManager para acceder facilmente a la sesion en formato orientado a objetos.](./src/Simplex/Sessions/README.md#sessionmanager-y-staticsessionmanager)
 
-[Trait para reutilizar la clase SessioManager en otras clases o controladores.](./src/Simplex/Traits/README.md)
+[Trait para reutilizar la clase SessionManager en otras clases o controladores.](./src/Simplex/Traits/README.md)
 
 [Clase AbstractSessionController extendible, el cual utiliza el trait anterior. Esto evita tener que incorporar el trait en todos los controladores.](./app/Controllers/README.md)
 

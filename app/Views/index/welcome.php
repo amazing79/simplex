@@ -35,7 +35,7 @@ $urlTuto = $url ?? 'https://symfony.com/doc/current/create_framework/index.html'
             <li>Otras configuraciones necesarias</li>
         </ul>
         <p>
-            Esto despu&acute;s lo agregas en los injectores de dependencias (dentro de config, hay algunos ejemplos) y ¡¡guala!!.
+            Esto despu&eacute;s lo agregas en los injectores de dependencias (dentro de config, hay algunos ejemplos) y ¡¡guala!!.
             Record&aacute; agregar estas configuraciones desde tu punto de acceso a la app, es decir
             <strong>public/index.php</strong>.
         </p>
@@ -55,6 +55,10 @@ $urlTuto = $url ?? 'https://symfony.com/doc/current/create_framework/index.html'
                 Para entender un poco como funciona, se agreg&oacute; un controller (IndexController) como tambi&eacute;n algunas
                 plantillas de ejemplo (welcome, layout y error). Estas editar a gusto.
             </p>
+            <blockquote>
+                <p><strong>Nota</strong> Para entender mejor el funcionamiento de los objetos Response y Request, ver la
+                    <a href="https://symfony.com/doc/8.0/components/http_foundation.html" target="_blank">documentaci&oacute;n de Symfony</a></p>
+            </blockquote>
             <p>
                 Las plantillas son html + php puro. Para facilitar la mantenibilidad de la estructura del sitio, se provee un layout de ejemplo para ver como simplificar
                 el c&oacute;digo de nuestras vistas. Por lo tanto, para renderizar html contaremos con dos estrategias (HtmlRender y HtmlLayoutRender).
@@ -72,6 +76,12 @@ $urlTuto = $url ?? 'https://symfony.com/doc/current/create_framework/index.html'
             <p>
                 Con la incorporaci&oacute;n de layouts, podremos incluir el js y css com&uacute;n del sitio en el layout, y el js particular (y css, si fuera necesario)
                 en su respectivo template. Para tal fin, se provee el m&eacute;todo:  <code><i>loadScript(name, attributes = '')</i></code>
+            </p>
+            <p>
+                Para facilitar el manejo de sesiones con php, se creo la clase SessionManager. A su vez, para facilitar el acceso a la sesi&oacute;n en clases y controladores,
+                se agreg&oacute; el trait HasSession (el cual tambi&eacute;n se combin&oacute; con un controlador base para que sea f&aacute;cilmente extensible por aquellos
+                controladores que necesiten acceder a la sesi&oacute;n). Esto, combinado con eventos del sistema que podemos "escuchar" con nuestros propios listeners,
+                nos permitir&aacute; controlar accesos no autorizados por el sistema (o perfiles, si quieren hilar m&aacute;s fino)
             </p>
             <p>
                 El manejo de datos est&aacute; pensado en el uso de la librer&iacute;a de php PDO, por lo cual los modelos pueden usar sql para acceder
