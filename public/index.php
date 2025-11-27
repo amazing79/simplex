@@ -3,6 +3,7 @@
 define ('APP_ROOT', dirname(__DIR__));
 
 require_once   APP_ROOT . '/vendor/autoload.php';
+const SESSION_ROOT = APP_ROOT . '/storage/sessions';
 
 use Symfony\Component\HttpFoundation\Request;
 use Amazing79\Simplex\Simplex\Framework;

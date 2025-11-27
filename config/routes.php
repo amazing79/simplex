@@ -23,7 +23,7 @@ $routes = new Routing\RouteCollection();
 $routes->add('welcome.welcome', new Routing\Route('/welcome', [
     '_controller' => 'App\Controllers\Welcome\WelcomeController::welcome',
 ]));
-/** IndexController commo punto de acceso a la App. También muestra la página de bienvenida
+/** IndexController como punto de acceso a la App. También muestra la página de bienvenida
 * Se proveen a modo de ejemplo, pero se pueden editar a gusto, ya que no rompe los tests de fábrica
  *
  */
